@@ -36,11 +36,21 @@ class User
         return $this->name;
     }
 
+    function getAddress(): string
+    {
+        return $this->address;
+    }
+
     // 年齢を変更(問題2: バリデーションを追加すること)
     function setAge(int $age): void
     {
+        if ($age < 0 || $age > 150) {
+            echo ("不正な数字です\n");
+            return;
+        }
         $this->age = $age;
     }
+
 
     // 年齢を取得
     function getAge(): int
@@ -48,11 +58,19 @@ class User
         return $this->age;
     }
 
-    function getaddress(): string
+    function setaddress(string $address): void
     {
-        return $this->address;
+        if ($address === "") {
+            echo "住所を空にはできません\n";
+            return;
+        }
+
+        $this->address = $address;
     }
 
     // 問題3
-    function getOlder(): void {}
+    function getOlder(): void
+    {
+        $this->setAge($this->age + 1);
+    }
 }
