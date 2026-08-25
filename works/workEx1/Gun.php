@@ -10,7 +10,7 @@ class Gun
     // 残弾
     private $currentMagazine = 0;
 
-    private $setExtendedMagazine;
+    private $extendedMagazine;
     // ↑フィールド============================
 
     // コンストラクタ
@@ -62,7 +62,10 @@ class Gun
     function setExtendedMagazine()
     {
         // 問題4
-
+        if (!is_int($maxmagazine) || $maxmagazine <= 0) {
+            echo "引数が不正です\n";
+            return;
+        }
     }
 
     // 拡張マガジンを取外し
