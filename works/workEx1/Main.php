@@ -10,8 +10,8 @@ $subWeapon = new Gun("Mosin-Nagant", 5);
 $mainWeapon->echoStatus();
 $subWeapon->echoStatus();
 
-$mainWeapon->setExtendedMagazine();
-$subWeapon->setExtendedMagazine();
+$mainWeapon->setExtendedMagazine($amount);
+$subWeapon->setExtendedMagazine($amount);
 
 $mainWeapon->reload();
 $subWeapon->reload();

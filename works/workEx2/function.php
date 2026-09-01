@@ -32,7 +32,9 @@ function getGrade($average)
 // ※ calcAverage関数を使うこと
 function getPassedStudents($students)
 {
-    // ここにコードを追記
+    return array_filter($students, function ($student) {
+        return calcAverage($student["scores"]) >= 60;
+    });
 }
 
 // 表示用関数(編集しないこと)
